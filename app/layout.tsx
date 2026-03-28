@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "LAUF Uninassau",
   description: "Liga de arduino Uninassau Fortaleza",
+  icons: {
+    icon: "/liga-arduino-logo.jpg"
+  }
 };
 
 export default function RootLayout({
