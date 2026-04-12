@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Començando:
 
-## Getting Started
-
-First, run the development server:
+Primeiramente, rode o comando pra instalar os pacotes basicos pra iniciar o projeto:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Instala as dependencias do projeto
+npm install
 ```
+Apos instalado as dependencias do projeto, rode co comando:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+# Inicia o servidor de desenvolvimento na porta localhost:3000
+npm run dev
+```
+## Crie seu arquivo de variavel de ambiente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Crie um arquivo chamado `.env` na raiz do projeto para uso futuro. Esse arquivo `NÃO` deve ser enviado para o repositório (Por padrão ele não é enviado, confira se ele ficou apagadinho no seu VSCODE, não mexa é assim mesmo).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Extensões recomendadas pra que quer usar o VScode:
 
-## Learn More
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) (Te ajuda a usar o tailwind de forma mais fluida)
 
-To learn more about Next.js, take a look at the following resources:
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (Te ajuda a manter o código javascript limpo e organizado)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (Te ajuda com o git e com o github pra acomapanhar o versionamento de código)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) (Te ajuda a visualizar o historico de commits)
 
-## Deploy on Vercel
+- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) (Te ajuda a organizar os arquivos na barra lateral)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Padronização de commits
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Usamos prefixos pra identificar o tipo de commit, por exemplo:
+
+- `feat:` Adiciona uma nova funcionalidade
+- `fix:` Corrige um bug
+- `docs:` Adiciona ou atualiza documentação
+- `style:` Formatação de código, sem alteração de lógica
+- `refactor:` Refatoração de código
+- `test:` Adiciona ou atualiza testes
+- `chore:` Atualização de dependências, configuração, etc.
+
+Sempre comece o commit com um desses prefixos, seguido de dois pontos e um espaço, e depois uma descrição curta do que foi feito. O commit pode ter mais de um tipo, mas sempre comece com o prefixo que representa a mudança mais significativa.
+
+**Caso você tenha adicionado uma biblioteca/dependencia, comece o commit evidenciando isso.**
+
+## Links de documentação relevante
+
+- [Next.js Documentation](https://nextjs.org/docs) - Documentação do NextJS
+- [Learn Next.js](https://nextjs.org/learn) - Tutorial interativo do NextJS
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Documentação do tailwind
