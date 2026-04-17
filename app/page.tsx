@@ -1,65 +1,180 @@
-import Image from "next/image";
+"use client";
+
+import Header from "./_components/Header";
+// Importando os ícones da biblioteca react-icons (Fa6)
+import { 
+  FaMicrochip, 
+  FaRobot, 
+  FaCode, 
+  FaArrowRight, 
+  FaUsers, 
+  FaLightbulb, 
+  FaChalkboardTeacher,
+  FaInstagram
+} from "react-icons/fa";
 
 export default function Home() {
+  // Função para realizar o scroll suave entre as seções
+  function scrollTo(id: string) {
+    const element = document.getElementById(id);
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen">
+      <Header />
+
+      {/* SEÇÃO HERO - Impacto Visual */}
+      <section id="inicio" className="bg-brand-black text-brand-white min-h-[85vh] flex items-center pt-20 pb-12">
+        <div className="w-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+          
+          <div className="flex flex-col gap-6">
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+              Inovando com <span className="text-brand-purple">Arduino</span> na Prática
+            </h1>
+            <p className="text-brand-gray-medium text-lg md:text-xl leading-relaxed max-w-lg">
+              A Liga de Arduino da UNINASSAU é o espaço ideal para transformar teoria em projetos reais. Desenvolva habilidades em eletrônica, programação e robótica.
+            </p>
+            
+            <div className="flex flex-wrap gap-4 mt-4">
+              <button 
+                onClick={() => scrollTo('atividades')}
+                className="bg-brand-purple hover:bg-brand-purple-hover text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 transition-all hover:scale-105"
+              >
+                Conheça nossos projetos <FaArrowRight />
+              </button>
+              <button 
+                onClick={() => scrollTo('sobre')} 
+                className="bg-transparent border-2 border-brand-gray-medium hover:border-brand-white text-white px-8 py-4 rounded-full font-semibold transition-all"
+              >
+                Saber mais
+              </button>
+            </div>
+          </div>
+
+          <div className="flex justify-center items-center relative">
+            <div className="absolute inset-0 bg-brand-purple/20 blur-[100px] rounded-full w-3/4 h-3/4 m-auto z-0"></div>
+            <div className="relative z-10 bg-brand-black border border-brand-gray-medium/20 p-16 rounded-3xl shadow-2xl">
+               <FaMicrochip className="text-[12rem] text-brand-purple" />
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      {/* SEÇÃO SOBRE - Pilares da Liga */}
+      <section id="sobre" className="bg-brand-white py-24 border-b border-brand-gray-medium">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="flex flex-col md:flex-row gap-12 items-center mb-16">
+            <div className="md:w-1/2">
+              <h2 className="text-brand-purple font-semibold tracking-wide uppercase text-sm mb-2">Quem Somos</h2>
+              <h3 className="text-4xl font-bold text-brand-black mb-6">Liderando a Inovação Maker na UNINASSAU</h3>
+              <p className="text-brand-text text-lg leading-relaxed">
+                A LAUF (Liga de Arduino Uninassau Fortaleza) nasceu da vontade de conectar alunos apaixonados por hardware e software. Nosso foco é preencher a lacuna entre a teoria acadêmica e a construção de soluções tecnológicas reais.
+              </p>
+            </div>
+            <div className="md:w-1/2 bg-brand-gray-light p-8 rounded-3xl border border-brand-gray-medium">
+              <p className="italic text-brand-text border-l-4 border-brand-purple pl-4">
+                "Transformamos componentes eletrônicos em soluções inteligentes, um código por vez."
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="group p-8 rounded-2xl bg-brand-gray-light border border-transparent hover:border-brand-purple/30 transition-all shadow-sm">
+              <FaUsers className="text-3xl text-brand-purple mb-4" />
+              <h4 className="text-xl font-bold text-brand-black mb-2">Comunidade Ativa</h4>
+              <p className="text-brand-text text-sm leading-relaxed">
+                Um ambiente colaborativo onde veteranos e calouros de engenharia trocam experiências e resolvem desafios juntos.
+              </p>
+            </div>
+
+            <div className="group p-8 rounded-2xl bg-brand-gray-light border border-transparent hover:border-brand-purple/30 transition-all shadow-sm">
+              <FaChalkboardTeacher className="text-3xl text-brand-purple mb-4" />
+              <h4 className="text-xl font-bold text-brand-black mb-2">Mentoria Técnica</h4>
+              <p className="text-brand-text text-sm leading-relaxed">
+                Suporte constante no desenvolvimento de lógica em C++, estruturação de circuitos e boas práticas de código limpo.
+              </p>
+            </div>
+
+            <div className="group p-8 rounded-2xl bg-brand-gray-light border border-transparent hover:border-brand-purple/30 transition-all shadow-sm">
+              <FaLightbulb className="text-3xl text-brand-purple mb-4" />
+              <h4 className="text-xl font-bold text-brand-black mb-2">Cultura Maker</h4>
+              <p className="text-brand-text text-sm leading-relaxed">
+                Estímulo total à criatividade, desde protótipos simples com sensores até projetos complexos de IoT e robótica.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO ATIVIDADES - Cards de Conteúdo */}
+      <section id="atividades" className="bg-brand-gray-light py-24">
+        <div className="max-w-7xl mx-auto px-8">
+            <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold text-brand-black">Nossas Atividades</h2>
+                <p className="text-brand-text mt-4">O que desenvolvemos dentro da liga</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-brand-white p-8 rounded-2xl shadow-sm border border-brand-gray-medium hover:border-brand-purple transition-all group">
+                  <div className="w-14 h-14 bg-brand-purple/10 rounded-xl mb-6 flex items-center justify-center group-hover:bg-brand-purple transition-colors">
+                      <FaMicrochip className="text-2xl text-brand-purple group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-black mb-3">Eletrônica</h3>
+                  <p className="text-brand-text leading-relaxed">Aprenda desde o funcionamento de resistores até a montagem de circuitos complexos.</p>
+              </div>
+
+              <div className="bg-brand-white p-8 rounded-2xl shadow-sm border border-brand-gray-medium hover:border-brand-purple transition-all group">
+                  <div className="w-14 h-14 bg-brand-purple/10 rounded-xl mb-6 flex items-center justify-center group-hover:bg-brand-purple transition-colors">
+                      <FaCode className="text-2xl text-brand-purple group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-black mb-3">Programação</h3>
+                  <p className="text-brand-text leading-relaxed">Desenvolva a lógica de programação utilizando C++ e outras linguagens focadas em hardware.</p>
+              </div>
+
+              <div className="bg-brand-white p-8 rounded-2xl shadow-sm border border-brand-gray-medium hover:border-brand-purple transition-all group">
+                  <div className="w-14 h-14 bg-brand-purple/10 rounded-xl mb-6 flex items-center justify-center group-hover:bg-brand-purple transition-colors">
+                      <FaRobot className="text-2xl text-brand-purple group-hover:text-white transition-colors" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-black mb-3">Robótica</h3>
+                  <p className="text-brand-text leading-relaxed">Crie sistemas autônomos, braços robóticos e integre sensores mecânicos.</p>
+              </div>
+            </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO CONTATO - Foco no Instagram */}
+      <section id="contato" className="bg-brand-black text-brand-white py-24 border-t border-brand-gray-medium/20">
+        <div className="max-w-4xl mx-auto px-8 text-center flex flex-col items-center">
+          
+          {/* Ícone de Destaque */}
+          <div className="w-20 h-20 bg-brand-purple/20 rounded-full flex items-center justify-center mb-8 border border-brand-purple/30">
+             <FaInstagram className="text-4xl text-brand-purple" />
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Conecte-se com a LAUF</h2>
+          <p className="text-brand-gray-medium text-lg leading-relaxed mb-10 max-w-2xl">
+            Quer fazer parte da liga, acompanhar a construção dos nossos projetos de perto ou tirar alguma dúvida? Nossa principal rede de comunicação é o Instagram. Segue a gente por lá!
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
+          {/* Botão com link para o Instagram */}
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.instagram.com/lauf.for?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" /* <-- SUBSTITUA PELO LINK DO INSTA DA LIGA */
             target="_blank"
             rel="noopener noreferrer"
+            className="bg-brand-purple hover:bg-brand-purple-hover text-white px-10 py-4 rounded-full font-semibold flex items-center gap-3 transition-all hover:scale-105 shadow-lg shadow-brand-purple/20"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            <FaInstagram className="text-xl" />
+            Acessar Instagram da LAUF
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* RODAPÉ SIMPLES */}
+      <footer className="bg-brand-black text-brand-gray-medium py-6 border-t border-brand-gray-medium/10 text-center text-sm">
+        <p>© {new Date().getFullYear()} Liga de Arduino UNINASSAU Fortaleza (LAUF). Todos os direitos reservados.</p>
+      </footer>
+    </main>
   );
 }
