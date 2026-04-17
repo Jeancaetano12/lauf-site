@@ -29,6 +29,7 @@ Crie um arquivo chamado `.env` na raiz do projeto para uso futuro. Esse arquivo 
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) (Te ajuda a organizar os arquivos na barra lateral)
 
 ## Padronização de commits
+<<<<<<< HEAD
 
 Usamos prefixos pra identificar o tipo de commit, por exemplo:
 
@@ -50,3 +51,25 @@ Sempre comece o commit com um desses prefixos, seguido de dois pontos e um espa�
 - [Learn Next.js](https://nextjs.org/learn) - Tutorial interativo do NextJS
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Documentação do tailwind
 
+=======
+
+Usamos prefixos pra identificar o tipo de commit, por exemplo:
+
+- `feat:` Adiciona uma nova funcionalidade
+- `fix:` Corrige um bug
+- `docs:` Adiciona ou atualiza documentação
+- `style:` Formatação de código, sem alteração de lógica
+- `refactor:` Refatoração de código
+- `test:` Adiciona ou atualiza testes
+- `chore:` Atualização de dependências, configuração, etc.
+
+Sempre comece o commit com um desses prefixos, seguido de dois pontos e um espaço, e depois uma descrição curta do que foi feito. O commit pode ter mais de um tipo, mas sempre comece com o prefixo que representa a mudança mais significativa.
+
+**Caso você tenha adicionado uma biblioteca/dependencia, comece o commit evidenciando isso.**
+
+## Links de documentação relevante
+
+- [Next.js Documentation](https://nextjs.org/docs) - Documentação do NextJS
+- [Learn Next.js](https://nextjs.org/learn) - Tutorial interativo do NextJS
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Documentação do tailwind
+>>>>>>> origin/icaro
