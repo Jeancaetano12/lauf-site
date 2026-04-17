@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "./_components/Header";
+import Carousel from "./_components/Carousel";
 // Importando os ícones da biblioteca react-icons (Fa6)
 import { 
   FaMicrochip, 
@@ -146,28 +147,36 @@ export default function Home() {
 
       {/* SEÇÃO CONTATO - Foco no Instagram */}
       <section id="contato" className="bg-brand-black text-brand-white py-24 border-t border-brand-gray-medium/20">
-        <div className="max-w-4xl mx-auto px-8 text-center flex flex-col items-center">
+        <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
           
-          {/* Ícone de Destaque */}
-          <div className="w-20 h-20 bg-brand-purple/20 rounded-full flex items-center justify-center mb-8 border border-brand-purple/30">
-             <FaInstagram className="text-4xl text-brand-purple" />
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            {/* Ícone de Destaque */}
+            <div className="w-20 h-20 bg-brand-purple/20 rounded-full flex items-center justify-center mb-8 border border-brand-purple/30 hover:scale-110 transition-transform">
+               <FaInstagram className="text-4xl text-brand-purple" />
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Conecte-se com a LAUF</h2>
+            <p className="text-brand-gray-medium text-lg leading-relaxed mb-10 max-w-lg">
+              Quer fazer parte da liga, acompanhar a construção dos nossos projetos de perto ou tirar alguma dúvida? Nossa principal rede de comunicação é o Instagram. Segue a gente por lá!
+            </p>
+
+            {/* Botão com link para o Instagram */}
+            <a
+              href="https://www.instagram.com/lauf.for?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" /* <-- SUBSTITUA PELO LINK DO INSTA DA LIGA */
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-brand-purple hover:bg-brand-purple-hover text-white px-10 py-4 rounded-full font-semibold flex items-center gap-3 transition-all hover:scale-105 shadow-lg shadow-brand-purple/20"
+            >
+              <FaInstagram className="text-xl" />
+              Acessar Instagram da LAUF
+            </a>
+          </div>
+
+          {/* Coluna 2: Carrossel de Imagens */}
+          <div className="w-full">
+            <Carousel />
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Conecte-se com a LAUF</h2>
-          <p className="text-brand-gray-medium text-lg leading-relaxed mb-10 max-w-2xl">
-            Quer fazer parte da liga, acompanhar a construção dos nossos projetos de perto ou tirar alguma dúvida? Nossa principal rede de comunicação é o Instagram. Segue a gente por lá!
-          </p>
-
-          {/* Botão com link para o Instagram */}
-          <a
-            href="https://www.instagram.com/lauf.for?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" /* <-- SUBSTITUA PELO LINK DO INSTA DA LIGA */
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-brand-purple hover:bg-brand-purple-hover text-white px-10 py-4 rounded-full font-semibold flex items-center gap-3 transition-all hover:scale-105 shadow-lg shadow-brand-purple/20"
-          >
-            <FaInstagram className="text-xl" />
-            Acessar Instagram da LAUF
-          </a>
         </div>
       </section>
 
