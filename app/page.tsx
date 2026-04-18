@@ -2,9 +2,8 @@
 
 import Header from "./_components/Header";
 import Carousel from "./_components/Carousel";
-// Importando os ícones da biblioteca react-icons (Fa6)
-import { 
-  FaMicrochip, 
+import { GoCpu } from "react-icons/go";
+import {  
   FaRobot, 
   FaCode, 
   FaArrowRight, 
@@ -15,7 +14,7 @@ import {
 } from "react-icons/fa";
 
 export default function Home() {
-  // Função para realizar o scroll suave entre as seções
+
   function scrollTo(id: string) {
     const element = document.getElementById(id);
     if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -25,8 +24,8 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
 
-      {/* SEÇÃO HERO - Impacto Visual */}
-      <section id="inicio" className="bg-brand-black text-brand-white min-h-[85vh] flex items-center pt-20 pb-12">
+      {/* SEÇÃO HERO - Trocado min-h-[85vh] por min-h-screen para garantir tela cheia em monitores grandes */}
+      <section id="inicio" className="bg-brand-black text-brand-white min-h-screen flex items-center pt-20 pb-12">
         <div className="w-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
           
           <div className="flex flex-col gap-6">
@@ -56,16 +55,16 @@ export default function Home() {
           <div className="flex justify-center items-center relative">
             <div className="absolute inset-0 bg-brand-purple/20 blur-[100px] rounded-full w-3/4 h-3/4 m-auto z-0"></div>
             <div className="relative z-10 bg-brand-black border border-brand-gray-medium/20 p-16 rounded-3xl shadow-2xl">
-               <FaMicrochip className="text-[12rem] text-brand-purple" />
+               <GoCpu className="text-[12rem] text-brand-purple" />
             </div>
           </div>
           
         </div>
       </section>
 
-      {/* SEÇÃO SOBRE - Pilares da Liga */}
-      <section id="sobre" className="bg-brand-white py-24 border-b border-brand-gray-medium">
-        <div className="max-w-7xl mx-auto px-8">
+      {/* SEÇÃO SOBRE - Adicionado min-h-screen, flex items-center e w-full */}
+      <section id="sobre" className="bg-brand-white min-h-screen flex items-center py-24 border-b border-brand-gray-medium">
+        <div className="w-full max-w-7xl mx-auto px-8">
           <div className="flex flex-col md:flex-row gap-12 items-center mb-16">
             <div className="md:w-1/2">
               <h2 className="text-brand-purple font-semibold tracking-wide uppercase text-sm mb-2">Quem Somos</h2>
@@ -109,9 +108,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SEÇÃO ATIVIDADES - Cards de Conteúdo */}
-      <section id="atividades" className="bg-brand-gray-light py-24">
-        <div className="max-w-7xl mx-auto px-8">
+      {/* SEÇÃO ATIVIDADES - Adicionado min-h-screen, flex items-center e w-full */}
+      <section id="atividades" className="bg-brand-gray-light min-h-screen flex items-center py-24">
+        <div className="w-full max-w-7xl mx-auto px-8">
             <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold text-brand-black">Nossas Atividades</h2>
                 <p className="text-brand-text mt-4">O que desenvolvemos dentro da liga</p>
@@ -120,7 +119,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-brand-white p-8 rounded-2xl shadow-sm border border-brand-gray-medium hover:border-brand-purple transition-all group">
                   <div className="w-14 h-14 bg-brand-purple/10 rounded-xl mb-6 flex items-center justify-center group-hover:bg-brand-purple transition-colors">
-                      <FaMicrochip className="text-2xl text-brand-purple group-hover:text-white transition-colors" />
+                      <GoCpu className="text-2xl text-brand-purple group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-bold text-brand-black mb-3">Eletrônica</h3>
                   <p className="text-brand-text leading-relaxed">Aprenda desde o funcionamento de resistores até a montagem de circuitos complexos.</p>
@@ -145,12 +144,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SEÇÃO CONTATO - Foco no Instagram */}
-      <section id="contato" className="bg-brand-black text-brand-white py-24 border-t border-brand-gray-medium/20">
-        <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+      {/* SEÇÃO CONTATO - Adicionado min-h-screen, flex items-center e ajustado o w-full do container */}
+      <section id="contato" className="bg-brand-black text-brand-white min-h-screen flex items-center py-24 border-t border-brand-gray-medium/20">
+        <div className="w-full max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
           
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            {/* Ícone de Destaque */}
             <div className="w-20 h-20 bg-brand-purple/20 rounded-full flex items-center justify-center mb-8 border border-brand-purple/30 hover:scale-110 transition-transform">
                <FaInstagram className="text-4xl text-brand-purple" />
             </div>
@@ -160,9 +158,8 @@ export default function Home() {
               Quer fazer parte da liga, acompanhar a construção dos nossos projetos de perto ou tirar alguma dúvida? Nossa principal rede de comunicação é o Instagram. Segue a gente por lá!
             </p>
 
-            {/* Botão com link para o Instagram */}
             <a
-              href="https://www.instagram.com/lauf.for?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" /* <-- SUBSTITUA PELO LINK DO INSTA DA LIGA */
+              href="https://www.instagram.com/lauf.for?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-brand-purple hover:bg-brand-purple-hover text-white px-10 py-4 rounded-full font-semibold flex items-center gap-3 transition-all hover:scale-105 shadow-lg shadow-brand-purple/20"
@@ -172,7 +169,6 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Coluna 2: Carrossel de Imagens */}
           <div className="w-full">
             <Carousel />
           </div>
@@ -180,7 +176,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RODAPÉ SIMPLES */}
       <footer className="bg-brand-black text-brand-gray-medium py-6 border-t border-brand-gray-medium/10 text-center text-sm">
         <p>© {new Date().getFullYear()} Liga de Arduino UNINASSAU Fortaleza (LAUF). Todos os direitos reservados.</p>
       </footer>
