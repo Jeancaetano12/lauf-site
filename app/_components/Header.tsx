@@ -10,14 +10,15 @@ export default function Header() {
     return (
         <nav className="sticky top-0 z-50 bg-brand-white/90 backdrop-blur-md flex items-center justify-between px-8 py-4 border-b border-brand-gray-medium">
             {/* Trocamos o h2 pela Image */}
-            <div className="cursor-pointer" onClick={() => scrollTo('inicio')}>
+            <div className="cursor-pointer md:flex gap-2 content-normal" onClick={() => scrollTo('inicio')}>
                 <Image 
-                    src="/assets/lauf-logo-branco.jpg" 
+                    src="/icone2.png" // Certifique-se de que o caminho para a imagem está correto
                     alt="Logo LAUF" 
                     width={60} // Ajuste o tamanho conforme necessário
                     height={60} 
                     className="object-contain"
                 />
+                <span>LAUF</span>
             </div>
 
             <div className="hidden md:flex gap-8">
